@@ -1,0 +1,33 @@
+/* XPM */
+static char * control_backwards_xpm[] = {
+/* width height ncolors cpp [x_hot y_hot] */
+"24 24 3 1 0 0",
+/* colors */
+" 	s none	m none	c none",
+".	s iconColor1	m black	c black",
+"X	s iconColor4	m white	c green",
+/* pixels */
+"                        ",
+"                        ",
+"                        ",
+"        .               ",
+"       ..               ",
+"      .X.               ",
+"     .XX.               ",
+"    .XXX................",
+"   .XXXXXXXXXXXXXXXXXXX.",
+"  .XXXXXXXXXXXXXXXXXXXX.",
+" .XXXXXXXXXXXXXXXXXXXXX.",
+".XXXXXXXXXXXXXXXXXXXXXX.",
+".XXXXXXXXXXXXXXXXXXXXXX.",
+" .XXXXXXXXXXXXXXXXXXXXX.",
+"  .XXXXXXXXXXXXXXXXXXXX.",
+"   .XXXXXXXXXXXXXXXXXXX.",
+"    .XXX................",
+"     .XX.               ",
+"      .X.               ",
+"       ..               ",
+"        .               ",
+"                        ",
+"                        ",
+"                        "};

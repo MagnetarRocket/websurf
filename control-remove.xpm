@@ -1,0 +1,26 @@
+/* XPM */
+static char * control_remove_xpm[] = {
+/* width height ncolors cpp [x_hot y_hot] */
+"16 16 4 1 -1 -1",
+/* colors */
+" 	s none	m none	c none",
+".	s topShadowColor	m white	c #bdbdbdbdbdbd",
+"X	s selectColor	m white	c #737373737373",
+"o	s bottomShadowColor	m black	c #636363636363",
+/* pixels */
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"................",
+".XXXXXXXXXXXXXXo",
+".XXXXXXXXXXXXXXo",
+".XXXXXXXXXXXXXXo",
+".XXXXXXXXXXXXXXo",
+".ooooooooooooooo",
+"                ",
+"                ",
+"                ",
+"                ",
+"                "};

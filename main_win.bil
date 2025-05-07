@@ -1,0 +1,1144 @@
+:bil-version	1 0
+:module main_win
+(
+
+:element mainwindow
+(
+	:type			:base-window
+	:width			632
+	:height			462
+	:bg-color		"white"
+	:icon-label		"Websurf"
+	:label			"Websurf:"
+	:resizable		:true
+	:visible		:true
+	:iconic			:false
+	:children		(
+		menubar
+		mainwindow_toolbar
+		drawpane
+		mainwindow_footer
+	)
+	:win-children		(
+		dialog_about
+		dialog_bookmarks
+		dialog_security
+	)
+)
+:element menubar
+(
+	:type			:container
+	:container-type		:menu-bar
+	:active			:true
+	:children		(
+		menubar_File_item
+		menubar_Edit_item
+		menubar_View_item
+		menubar_Navigate_item
+		menubar_Bookmarks_item
+		menubar_Options_item
+		menubar_Help_item
+	)
+)
+:element menubar_File_item
+(
+	:type			:item
+	:item-type		:item-for-menubar
+	:label-type		:string
+	:label			"File"
+	:is-help-item		:false
+	:menu			File_menu
+	:active			:true
+)
+:element menubar_Edit_item
+(
+	:type			:item
+	:item-type		:item-for-menubar
+	:label-type		:string
+	:label			"Edit"
+	:is-help-item		:false
+	:menu			Edit_menu
+	:active			:true
+)
+:element menubar_View_item
+(
+	:type			:item
+	:item-type		:item-for-menubar
+	:label-type		:string
+	:label			"View"
+	:is-help-item		:false
+	:menu			View_menu
+	:active			:true
+)
+:element menubar_Navigate_item
+(
+	:type			:item
+	:item-type		:item-for-menubar
+	:label-type		:string
+	:label			"Navigate"
+	:is-help-item		:false
+	:menu			Navigate_menu
+	:active			:true
+)
+:element menubar_Bookmarks_item
+(
+	:type			:item
+	:item-type		:item-for-menubar
+	:label-type		:string
+	:label			"Bookmarks"
+	:is-help-item		:false
+	:menu			Bookmarks_menu
+	:active			:true
+)
+:element menubar_Options_item
+(
+	:type			:item
+	:item-type		:item-for-menubar
+	:label-type		:string
+	:label			"Options"
+	:is-help-item		:false
+	:menu			Options_menu
+	:active			:true
+)
+:element menubar_Help_item
+(
+	:type			:item
+	:item-type		:item-for-menubar
+	:label-type		:string
+	:label			"Help"
+	:is-help-item		:true
+	:menu			Help_menu
+	:active			:true
+)
+:element mainwindow_toolbar
+(
+	:type			:container
+	:container-type		:tool-bar
+	:height			48
+	:visible		:true
+	:border-frame		:shadow-out
+	:children		(
+		button_back
+		button_fowards
+		location_url
+		button_home
+		button_refresh
+		button_halt
+		button_go
+	)
+)
+:element button_back
+(
+	:type			:button
+	:button-type		:push-button
+	:x			4
+	:y			8
+	:label-type		:graphic
+	:label-alignment	:center
+	:label			"/home/prime/documents/code/websurf/control-backwards"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 8)
+	:west-attachment	(:point 0 4)
+)
+:element button_fowards
+(
+	:type			:button
+	:button-type		:push-button
+	:x			46
+	:y			8
+	:label-type		:graphic
+	:label-alignment	:center
+	:label			"/home/prime/documents/code/websurf/control-fowards"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 8)
+	:west-attachment	(:point 0 46)
+)
+:element location_url
+(
+	:type			:text-field
+	:text-type		:alphanumeric
+	:x			260
+	:y			10
+	:num-columns		32
+	:max-length		80
+	:read-only		:false
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 10)
+	:east-attachment	(:point 0 0)
+	:west-attachment	(:point 0 260)
+)
+:element button_home
+(
+	:type			:button
+	:button-type		:push-button
+	:x			88
+	:y			8
+	:label-type		:graphic
+	:label-alignment	:center
+	:label			"/home///////////////////prime/documents/code/websurf/control-home"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 8)
+	:west-attachment	(:point 0 88)
+)
+:element button_refresh
+(
+	:type			:button
+	:button-type		:push-button
+	:x			130
+	:y			8
+	:label-type		:graphic
+	:label-alignment	:center
+	:label			"/home/prime/documents/code/websurf/control-refresh"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 8)
+	:west-attachment	(:point 0 130)
+)
+:element button_halt
+(
+	:type			:button
+	:button-type		:push-button
+	:x			172
+	:y			8
+	:label-type		:graphic
+	:label-alignment	:center
+	:label			"/home/prime/documents/code/websurf/control-halt"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 8)
+	:west-attachment	(:point 0 172)
+)
+:element button_go
+(
+	:type			:button
+	:button-type		:push-button
+	:x			214
+	:y			8
+	:label-type		:graphic
+	:label-alignment	:center
+	:label			"/home/prime/documents/code/websurf/control_go"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 8)
+	:west-attachment	(:point 0 214)
+)
+:element drawpane
+(
+	:type			:drawing-area
+	:x			0
+	:y			0
+	:width			637
+	:height			463
+	:drawarea-width		635
+	:drawarea-height	461
+	:bg-color		"white"
+	:border-frame		:none
+	:hscrollbar		:when-needed
+	:vscrollbar		:when-needed
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 0)
+	:south-attachment	(:obj mainwindow -1)
+	:east-attachment	(:obj mainwindow -1)
+	:west-attachment	(:point 0 0)
+)
+:element mainwindow_footer
+(
+	:type			:container
+	:container-type		:footer
+	:height			28
+	:visible		:true
+	:border-frame		:none
+	:children		(
+		mainwindow_label
+		gauge_load
+	)
+)
+:element mainwindow_label
+(
+	:type			:label
+	:x			1
+	:y			1
+	:label-type		:string
+	:label			"footer message"
+	:label-alignment	:left
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 1)
+	:west-attachment	(:point 0 1)
+)
+:element gauge_load
+(
+	:type			:scale
+	:label-type		:string
+	:label			"Progress:"
+	:label-position		:west
+	:read-only		:true
+	:orientation		:horizontal
+	:direction		:left-to-right
+	:min-value		0
+	:max-value		100
+	:initial-value		50
+	:increment		1
+	:decimal-points		0
+	:show-value		:false
+	:x			468
+	:y			0
+	:width			102
+	:height			20
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 0)
+	:east-attachment	(:point 0 0)
+	:west-attachment	(:obj-edge mainwindow_footer -167)
+)
+:element dialog_about
+(
+	:type			:dialog
+	:width			380
+	:height			175
+	:bg-color		"white"
+	:label			"About websurf"
+	:resizable		:false
+	:visible		:false
+	:default-button		about_dialog_button1
+	:children		(
+		controlpane
+		dialog_button_panel
+	)
+)
+:element controlpane
+(
+	:type			:container
+	:container-type		:relative
+	:x			0
+	:y			0
+	:width			380
+	:height			175
+	:visible		:true
+	:border-frame		:none
+	:north-attachment	(:point 0 0)
+	:south-attachment	(:obj dialog_about 0)
+	:east-attachment	(:obj dialog_about 0)
+	:west-attachment	(:point 0 0)
+	:children		(
+		label
+	)
+)
+:element label
+(
+	:type			:label
+	:x			118
+	:y			77
+	:label-type		:string
+	:label			"Websurf x.x\nBy @MagnatarRocket"
+	:label-alignment	:center
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 77)
+	:west-attachment	(:point 0 118)
+)
+:element dialog_button_panel
+(
+	:type			:container
+	:container-type		:button-panel
+	:height			48
+	:visible		:true
+	:border-frame		:none
+	:children		(
+		about_dialog_button1
+	)
+)
+:element about_dialog_button1
+(
+	:type			:button
+	:button-type		:push-button
+	:x			152
+	:y			12
+	:label-type		:string
+	:label-alignment	:center
+	:label			"Close"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 12)
+	:east-attachment	(:grid-line 60 0)
+	:west-attachment	(:grid-line 40 0)
+)
+:element dialog_bookmarks
+(
+	:type			:dialog
+	:width			374
+	:height			240
+	:bg-color		"white"
+	:label			"Bookmark manager"
+	:resizable		:true
+	:visible		:false
+	:children		(
+		controlpane2
+		dialog_button_panel2
+	)
+)
+:element controlpane2
+(
+	:type			:container
+	:container-type		:relative
+	:x			0
+	:y			0
+	:width			374
+	:height			240
+	:visible		:true
+	:border-frame		:none
+	:north-attachment	(:point 0 0)
+	:south-attachment	(:obj dialog_bookmarks 0)
+	:east-attachment	(:obj dialog_bookmarks 0)
+	:west-attachment	(:point 0 0)
+	:children		(
+		list
+		textfield_bookmark_name
+		textfield_bookmark_url
+		button
+		button2
+	)
+)
+:element list
+(
+	:type			:list
+	:x			0
+	:y			0
+	:width			139
+	:height			211
+	:selection-mode		:browse
+	:selection-required	:false
+	:num-rows		-1
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 0)
+	:west-attachment	(:point 0 0)
+	:children		(
+		list_itemA_item
+		list_itemB_item
+	)
+)
+:element list_itemA_item
+(
+	:type			:item
+	:item-type		:item-for-list
+	:label			"itemA"
+	:selected		:false
+)
+:element list_itemB_item
+(
+	:type			:item
+	:item-type		:item-for-list
+	:label			"itemB"
+	:selected		:false
+)
+:element textfield_bookmark_name
+(
+	:type			:text-field
+	:text-type		:alphanumeric
+	:x			151
+	:y			9
+	:label-type		:string
+	:label			"Name:"
+	:label-position		:west
+	:num-columns		16
+	:max-length		80
+	:read-only		:false
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 9)
+	:west-attachment	(:point 0 151)
+)
+:element textfield_bookmark_url
+(
+	:type			:text-field
+	:text-type		:alphanumeric
+	:x			163
+	:y			41
+	:label-type		:string
+	:label			"URL:"
+	:label-position		:west
+	:num-columns		16
+	:max-length		80
+	:read-only		:false
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 41)
+	:west-attachment	(:point 0 163)
+)
+:element button
+(
+	:type			:button
+	:button-type		:push-button
+	:x			32
+	:y			215
+	:label-type		:graphic
+	:label-alignment	:center
+	:label			"control-add"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 215)
+	:west-attachment	(:point 0 32)
+)
+:element button2
+(
+	:type			:button
+	:button-type		:push-button
+	:x			74
+	:y			215
+	:label-type		:graphic
+	:label-alignment	:center
+	:label			"control-remove"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 215)
+	:west-attachment	(:point 0 74)
+)
+:element dialog_button_panel2
+(
+	:type			:container
+	:container-type		:button-panel
+	:height			48
+	:visible		:true
+	:border-frame		:none
+	:children		(
+		dialog_bookmarks_save
+		dialog_bookmarks_exit
+		button_bookmarks_snarf
+	)
+)
+:element dialog_bookmarks_save
+(
+	:type			:button
+	:button-type		:push-button
+	:x			164
+	:y			12
+	:label-type		:string
+	:label-alignment	:center
+	:label			"Save"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 12)
+	:east-attachment	(:grid-line 62 0)
+	:west-attachment	(:grid-line 43 0)
+)
+:element dialog_bookmarks_exit
+(
+	:type			:button
+	:button-type		:push-button
+	:x			246
+	:y			12
+	:label-type		:string
+	:label-alignment	:center
+	:label			"Exit"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 12)
+	:east-attachment	(:grid-line 84 0)
+	:west-attachment	(:grid-line 65 0)
+)
+:element button_bookmarks_snarf
+(
+	:type			:button
+	:button-type		:push-button
+	:x			58
+	:y			12
+	:label-type		:string
+	:label-alignment	:center
+	:label			"Snarf current"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 12)
+	:west-attachment	(:point 0 58)
+)
+:element dialog_security
+(
+	:type			:dialog
+	:width			413
+	:height			168
+	:bg-color		"white"
+	:label			"Security info"
+	:resizable		:false
+	:visible		:false
+	:children		(
+		controlpane3
+		dialog_button_panel3
+	)
+)
+:element controlpane3
+(
+	:type			:container
+	:container-type		:relative
+	:x			0
+	:y			0
+	:width			413
+	:height			168
+	:visible		:true
+	:border-frame		:none
+	:north-attachment	(:point 0 0)
+	:south-attachment	(:obj dialog_security 0)
+	:east-attachment	(:obj dialog_security 0)
+	:west-attachment	(:point 0 0)
+	:children		(
+		textfield_url
+		textfield_owner
+		textfield_verifier
+	)
+)
+:element textfield_url
+(
+	:type			:text-field
+	:text-type		:alphanumeric
+	:x			37
+	:y			29
+	:label-type		:string
+	:label			"URL:"
+	:label-position		:west
+	:num-columns		33
+	:max-length		256
+	:read-only		:true
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 29)
+	:west-attachment	(:point 0 37)
+)
+:element textfield_owner
+(
+	:type			:text-field
+	:text-type		:alphanumeric
+	:x			20
+	:y			68
+	:label-type		:string
+	:label			"Owner:"
+	:label-position		:west
+	:num-columns		33
+	:max-length		256
+	:read-only		:true
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 68)
+	:west-attachment	(:point 0 20)
+)
+:element textfield_verifier
+(
+	:type			:text-field
+	:text-type		:alphanumeric
+	:x			14
+	:y			107
+	:label-type		:string
+	:label			"Verifier:"
+	:label-position		:west
+	:num-columns		33
+	:max-length		256
+	:read-only		:true
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 107)
+	:west-attachment	(:point 0 14)
+)
+:element dialog_button_panel3
+(
+	:type			:container
+	:container-type		:button-panel
+	:height			48
+	:visible		:true
+	:border-frame		:none
+	:children		(
+		dialog_button1
+		dialog_button2
+		dialog_button3
+	)
+)
+:element dialog_button1
+(
+	:type			:button
+	:button-type		:push-button
+	:x			41
+	:y			12
+	:label-type		:string
+	:label-alignment	:center
+	:label			"Button1"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 12)
+	:east-attachment	(:grid-line 30 0)
+	:west-attachment	(:grid-line 9 0)
+)
+:element dialog_button2
+(
+	:type			:button
+	:button-type		:push-button
+	:x			165
+	:y			12
+	:label-type		:string
+	:label-alignment	:center
+	:label			"Button2"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 12)
+	:east-attachment	(:grid-line 60 0)
+	:west-attachment	(:grid-line 39 0)
+)
+:element dialog_button3
+(
+	:type			:button
+	:button-type		:push-button
+	:x			289
+	:y			12
+	:label-type		:string
+	:label-alignment	:center
+	:label			"Button3"
+	:active			:true
+	:visible		:true
+	:north-attachment	(:point 0 12)
+	:east-attachment	(:grid-line 90 0)
+	:west-attachment	(:grid-line 69 0)
+)
+:element File_menu
+(
+	:type			:menu
+	:tear-off		:false
+	:children		(
+		File_menu_New_window_item
+		File_menu_Open_item
+		File_menu_Save_as_item
+		File_menu_Print_item
+		File_menu_separator1_item
+		File_menu_Exit_item
+	)
+)
+:element File_menu_New_window_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"New window"
+	:active			:true
+)
+:element File_menu_Open_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Open"
+	:accelerator		"ctrl+o"
+	:active			:true
+)
+:element File_menu_Save_as_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Save as"
+	:active			:true
+)
+:element File_menu_Print_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Print"
+	:active			:true
+)
+:element File_menu_separator1_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:separator
+	:line-style		:etched-out
+	:active			:true
+)
+:element File_menu_Exit_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Exit"
+	:active			:true
+)
+:element Edit_menu
+(
+	:type			:menu
+	:tear-off		:false
+	:children		(
+		Edit_menu_Cut_item
+		Edit_menu_Copy_item
+		Edit_menu_Paste_item
+		Edit_menu_separator2_item
+		Edit_menu_Select_all_item
+		Edit_menu_separator3_item
+		Edit_menu_Refresh_Reload_item
+		Edit_menu_Halt_loading_item
+	)
+)
+:element Edit_menu_Cut_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Cut"
+	:accelerator		"x"
+	:active			:true
+)
+:element Edit_menu_Copy_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Copy"
+	:accelerator		"c"
+	:active			:true
+)
+:element Edit_menu_Paste_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Paste"
+	:accelerator		"v"
+	:active			:true
+)
+:element Edit_menu_separator2_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:separator
+	:line-style		:etched-out
+	:active			:true
+)
+:element Edit_menu_Select_all_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Select all"
+	:accelerator		"a"
+	:active			:true
+)
+:element Edit_menu_separator3_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:separator
+	:line-style		:etched-out
+	:active			:true
+)
+:element Edit_menu_Refresh_Reload_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Refresh/Reload"
+	:active			:true
+)
+:element Edit_menu_Halt_loading_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Halt loading"
+	:active			:true
+)
+:element View_menu
+(
+	:type			:menu
+	:tear-off		:false
+	:children		(
+		View_menu_Enlarge_font_item
+		View_menu_Shrink_font_item
+		View_menu_Default_font_size_item
+		View_menu_separator1_item
+		View_menu_View_page_source_item
+	)
+)
+:element View_menu_Enlarge_font_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Enlarge font"
+	:active			:true
+)
+:element View_menu_Shrink_font_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Shrink font"
+	:active			:true
+)
+:element View_menu_Default_font_size_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Default font size"
+	:active			:true
+)
+:element View_menu_separator1_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:separator
+	:line-style		:etched-out
+	:active			:true
+)
+:element View_menu_View_page_source_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"View page source"
+	:active			:true
+)
+:element Navigate_menu
+(
+	:type			:menu
+	:tear-off		:false
+	:children		(
+		Navigate_menu_Go_to_item
+		Navigate_menu_separator1_item
+		Navigate_menu_Back_item
+		Navigate_menu_Fowards_item
+	)
+)
+:element Navigate_menu_Go_to_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Go to..."
+	:active			:true
+)
+:element Navigate_menu_separator1_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:separator
+	:line-style		:etched-out
+	:active			:true
+)
+:element Navigate_menu_Back_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Back"
+	:active			:true
+)
+:element Navigate_menu_Fowards_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Fowards"
+	:active			:true
+)
+:element Bookmarks_menu
+(
+	:type			:menu
+	:tear-off		:false
+	:children		(
+		Bookmarks_menu_Add_bookmark_item
+		Bookmarks_menu_Edit_bookmarks_item
+		Bookmarks_menu_Bookmarks_item
+	)
+)
+:element Bookmarks_menu_Add_bookmark_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Add bookmark"
+	:active			:true
+)
+:element Bookmarks_menu_Edit_bookmarks_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Edit bookmarks"
+	:active			:true
+)
+:element Bookmarks_menu_Bookmarks_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Bookmarks:"
+	:menu			dummy_menu
+	:active			:true
+)
+:element Options_menu
+(
+	:type			:menu
+	:tear-off		:false
+	:children		(
+		Options_menu_Security_check_item
+		Options_menu_Enable_live_loading_mode_item
+	)
+)
+:element Options_menu_Security_check_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Security check"
+	:active			:true
+)
+:element Options_menu_Enable_live_loading_mode_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Enable live loading mode"
+	:active			:true
+)
+:element Help_menu
+(
+	:type			:menu
+	:tear-off		:false
+	:children		(
+		Help_menu_Help_page_item
+		Help_menu_About_item
+	)
+)
+:element Help_menu_Help_page_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Help page"
+	:active			:true
+)
+:element Help_menu_About_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"About..."
+	:active			:true
+)
+:element dummy_menu
+(
+	:type			:menu
+	:tear-off		:false
+	:children		(
+		Bookmarks_menu2_Item1_item
+		Bookmarks_menu2_Item2_item
+	)
+)
+:element Bookmarks_menu2_Item1_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Item1"
+	:active			:true
+)
+:element Bookmarks_menu2_Item2_item
+(
+	:type			:item
+	:item-type		:item-for-menu
+	:label-type		:string
+	:label			"Item2"
+	:active			:true
+)
+:element file_seln
+(
+	:type			:file-chooser
+	:visible		:false
+	:label			"Open file"
+	:filter-pattern		"*.html *.htl"
+	:ok-label		"Open"
+	:auto-dismiss		:true
+	:directory		"~"
+	:file-type-mask		:regular
+)
+:element file_seln_saveas
+(
+	:type			:file-chooser
+	:visible		:false
+	:label			"Save as..."
+	:ok-label		"Ok"
+	:auto-dismiss		:true
+	:file-type-mask		:directory
+)
+:connection
+(
+	:from			File_menu_Open_item
+	:to			file_seln
+	:when			:activate
+	:action-type		:builtin
+	:action			:show
+	:arg-type		:void
+)
+:connection
+(
+	:from			file_seln
+	:to			file_seln
+	:when			:ok
+	:action-type		:builtin
+	:action			:hide
+	:arg-type		:void
+)
+:connection
+(
+	:from			file_seln
+	:to			file_seln
+	:when			:cancel
+	:action-type		:builtin
+	:action			:hide
+	:arg-type		:void
+)
+:connection
+(
+	:from			Help_menu_About_item
+	:to			dialog_about
+	:when			:activate
+	:action-type		:builtin
+	:action			:show
+	:arg-type		:void
+)
+:connection
+(
+	:from			about_dialog_button1
+	:to			dialog_about
+	:when			:activate
+	:action-type		:builtin
+	:action			:hide
+	:arg-type		:void
+)
+:connection
+(
+	:from			Bookmarks_menu_Edit_bookmarks_item
+	:to			dialog_bookmarks
+	:when			:activate
+	:action-type		:builtin
+	:action			:show
+	:arg-type		:void
+)
+:connection
+(
+	:from			dialog_bookmarks_exit
+	:to			dialog_bookmarks
+	:when			:activate
+	:action-type		:builtin
+	:action			:hide
+	:arg-type		:void
+)
+:connection
+(
+	:from			File_menu_Save_as_item
+	:to			file_seln_saveas
+	:when			:activate
+	:action-type		:builtin
+	:action			:show
+	:arg-type		:void
+)
+)
