@@ -1,17 +1,0 @@
-:bil-version	1 0
-:project 2l¢–V
-(
-	:files			(ä±§–V)
-	:root-window		main_win.mainwindow
-	:session-management	(
-		:sessioning-method :none
-	)
-	:tooltalk		(
-		:desktop-level	:none
-	)
-	:internationalization	(
-		:enabled	:false
-	)
-	:res-file-types		()
-
-)
