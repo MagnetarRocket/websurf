@@ -6,9 +6,6 @@ Should be able to detect Gemini & Markdown, if transtxt can't detect a
 format it can see, transtxt will format the page to be displayed
 as a text only page.
 */
-const char *html_lastnames[2];
-*html_lastnames[0] = ".htm";
-*html_lastnames[1] = ".html";
 
 const char *gemtext_lastnames[3];
 *gemtext_lastnames[0]=".gmi";
